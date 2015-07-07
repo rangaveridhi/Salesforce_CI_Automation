@@ -1,0 +1,22 @@
+<project name="Sample usage of Salesforce Ant tasks" default="deployCode" basedir="./Salesforce_Deployment_CI/src" xmlns:sf="antlib:com.salesforce">
+
+   <property file="build.properties"/>
+   <property environment="env"/>
+
+   <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+       <classpath>
+           <pathelement location="../ant-salesforce.jar" />
+       </classpath>
+   </taskdef>
+<target name="proxy"> 
+<property name="proxy.host" value="defrceprx01.de.eurw.ey.net" /> 
+<property name="proxy.port" value="8080" /> 
+<setproxy proxyhost="${proxy.host}" proxyport="${proxy.port}" /> 
+</target> 
+  <!-- Shows deploying code & running tests for code in directory -->
+   <target name="deployCode" depends="proxy">
+     <!-- Upload the contents of the "pages" directory, containing new VF pages-->
+     <sf:deploy username="rangaveridhi@gmail.com" password="Rangakiran@32DwqlmNyP2sksIN9hDYwZ8Rtzk" serverurl="login.salesforce.com" maxPoll="20" deployRoot="/" rollbackOnError="true">
+             </sf:deploy>
+   </target>
+</project>
