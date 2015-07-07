@@ -3,7 +3,7 @@
     <types>
         <members>TestVFPage</members>
         <name>ApexPage</name>
-        </types>
+        
     </types>
     <version>33.0</version>
 </Package>
